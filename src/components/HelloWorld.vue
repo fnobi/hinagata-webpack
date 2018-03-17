@@ -14,4 +14,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'config';
+.hello-world {
+  @include sp-layout {
+    background-color: #f00;
+    animation: blink 1s infinite;
+  }
+}
 </style>
