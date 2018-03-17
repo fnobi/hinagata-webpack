@@ -1,14 +1,19 @@
 <template lang="pug">
-.hello-world(@click="msg += '!'") {{msg}}
+.hello-world(@click="handleClick") {{msg}}
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'hello-world',
   data() {
     return {
       msg: 'Welcome to Your Vue.js App',
     };
+  },
+  methods: {
+    handleClick() {
+      this.msg += '!';
+    },
   },
 };
 </script>
@@ -16,9 +21,13 @@ export default {
 <style lang="scss" scoped>
 @import 'config';
 .hello-world {
+  padding: 1em;
   @include sp-layout {
-    background-color: #f00;
-    animation: blink 1s infinite;
+    background-color: #888;
+    color: #fff;
+  }
+  @include pc-layout {
+    background-color: #eee;
   }
 }
 </style>
