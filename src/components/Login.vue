@@ -27,15 +27,15 @@ div
 </style>
 
 <script>
+import { mapState, mapActions } from 'vuex';
+
 export default {
   name: 'login',
-  data() {
-    return {
-      user: null,
-      isAuthLoading: true,
-    };
+  computed: {
+    ...mapState(['user', 'isAuthLoading']),
   },
   methods: {
+    ...mapActions(['updateUser']),
     signIn() {
       const provider = new firebase.auth.GoogleAuthProvider();
       firebase.auth().signInWithRedirect(provider);
@@ -43,8 +43,7 @@ export default {
   },
   mounted() {
     firebase.auth().onAuthStateChanged((user) => {
-      this.user = user;
-      this.isAuthLoading = false;
+      this.updateUser(user);
     });
     firebase.auth().getRedirectResult();
   },
