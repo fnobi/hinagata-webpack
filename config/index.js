@@ -5,12 +5,13 @@
 const path = require('path')
 
 const DEST = '../public';
+const STATIC_DIR = 'static';
 
 module.exports = {
   dev: {
 
     // Paths
-    assetsSubDirectory: 'static',
+    assetsSubDirectory: STATIC_DIR,
     assetsPublicPath: '/',
     proxyTable: {},
 
@@ -51,7 +52,7 @@ module.exports = {
 
     // Paths
     assetsRoot: path.resolve(__dirname, DEST),
-    assetsSubDirectory: 'static',
+    assetsSubDirectory: STATIC_DIR,
     assetsPublicPath: '/',
 
     /**
