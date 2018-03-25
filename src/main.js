@@ -5,6 +5,9 @@ import Vue from 'vue';
 import App from '@/App';
 import router from '@/router';
 import store from '@/store';
+import firebaseConfig from './config/firebase-config.json';
+
+firebase.initializeApp(firebaseConfig);
 
 Vue.config.productionTip = false;
 

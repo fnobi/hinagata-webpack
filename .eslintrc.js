@@ -49,5 +49,6 @@ module.exports = {
     'arrow-parens': ["error", "always"]
   },
   "globals": {
+    firebase: true,
   }
 }
